@@ -1,0 +1,28 @@
+namespace ClientNamespace;
+
+enum Gender: byte { Male, Female }
+
+table Person {
+  name: string;
+  age: float;
+  weight: float;
+  gender: Gender;
+}
+
+table Group {
+  groupname: string;
+  averageage: float;
+  averageweight: float;
+  names: [string];
+}
+
+union Client {
+  Person,  
+  Group  
+}
+
+table Root {
+  client: Client;
+}
+
+root_type Root;
